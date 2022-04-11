@@ -1,0 +1,90 @@
+@CHARSET "UTF-8";
+
+.div_index_content img
+{
+    width: 60%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.form_input_submit
+{
+    margin-left: 30px;
+}
+
+.div_login img
+{
+    width: 30%;
+    height: auto;
+}
+
+.employee_add_input_text
+{
+    width: 80%;
+}
+
+.employee_image_style
+{
+    width: 40%;
+    height: auto;
+}
+
+.div_index_content li
+{
+    display: inline-block;
+    margin-left: 50px;
+    font-size: 25px;
+}
+
+.div_index_content ul
+{
+    text-align: center;
+}
+
+.table_header
+{
+    padding: 30px;
+}
+
+.employee_even_row
+{
+    background-color: beige;
+}
+
+.employee_odd_row
+{
+    background-color: aqua;
+}
+
+.table_style_form
+{
+    border: 2px solid gray;
+    margin-left: 200px;
+    text-align: center;
+    padding: 50px;
+    font-size: 12px;
+}
+
+.table_style_data_table
+{
+    border: 1px solid gray;
+    margin-left: 200px;
+    text-align: center;
+    padding: 50px;
+}
+
+#footer_designed_by_div
+{
+    margin-top: 5%;
+    text-align: center;
+    font-family: Consolas;
+    font-size: 11px;
+}
+
+.header_image_div img
+{
+    width: 50%;
+    display: block;
+    margin: auto;
+}

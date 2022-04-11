@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org.ui"
+    >
+
+    <ui:composition template="utility/genel_sablon.xhtml">
+
+        <ui:define name="content">
+
+            <div class = "div_content">
+
+                <h:form>
+
+                    <p:panel>
+
+                        <f:facet name = "header">
+
+                            Yenile
+                            <p:commandButton action="#{otobusBiletiController.yenile()}"
+                               icon="pi pi-refresh" update="@form" process="@this"
+                            />
+                        </f:facet>
+
+                        <h:panelGrid columns = "2">
+
+                            <p:outputLabel value = "Şirket"/>
+                            <p:inputText value = "#{otobusBiletiManagedBean.otobusBileti.firma}" required="true"/>
+
+                            <p:outputLabel value = "Nereden"/>
+                            <p:inputText value = "#{otobusBiletiManagedBean.otobusBileti.nereden}" required="true"/>
+
+                            <p:outputLabel value = "Nereye"/>
+                            <p:inputText value = "#{otobusBiletiManagedBean.otobusBileti.nereye}" required="true"/>
+
+                            <p:outputLabel value = "Hareket Zamanı"/>
+                            <p:datePicker value = "#{otobusBiletiManagedBean.otobusBileti.hareketZamani}" required="true"/>
+
+                            <p:outputLabel/>
+                            <p:commandButton value = "Kaydet" action = "#{otobusBiletiManagedBean.kaydet()}"
+                                             update="@form" process="@parent"/>
+                        </h:panelGrid>
+
+                    </p:panel>
+
+
+                    <br/>
+
+                    <p:panel>
+
+                        <f:facet name = "header">
+                            Biletleri Göster / Yenile
+                            <p:commandButton action="#{otobusBiletiManagedBean.biletleriGetir()}"
+                                             icon="pi pi-refresh" update="@form" process="@this"
+                            />
+                        </f:facet>
+
+                        <p:dataTable var ="otobusBileti" value ="#{otobusBiletiManagedBean.otobusBiletListesi}">
+
+                            <p:column headerText = "Bilet ID">
+                                <h:outputText value="#{otobusBileti.otobusBiletiID} " />
+                            </p:column>
+
+                            <p:column headerText = "Firma">
+                                <h:outputText value="#{otobusBileti.firma}" />
+                            </p:column>
+
+                            <p:column headerText = "Nereden">
+                                <h:outputText value="#{otobusBileti.nereden}" />
+                            </p:column>
+
+                            <p:column headerText = "Nereye">
+                                <h:outputText value="#{otobusBileti.nereye}" />
+                            </p:column>
+
+                            <p:column headerText = "Hareket Zamanı">
+                                <h:outputText value="#{otobusBileti.hareketZamani}" />
+                            </p:column>
+
+                            <p:column headerText = "Düzenle">
+                                <p:commandButton action="#{otobusBiletiManagedBean.duzenle(otobusBileti)}"
+                                                 icon="pi pi-refresh" update="@form" process="@this"
+                                />
+                            </p:column>
+
+                        </p:dataTable>
+
+                    </p:panel>
+
+                </h:form>
+
+            </div>
+
+        </ui:define>
+
+    </ui:composition>
+
+</html>
